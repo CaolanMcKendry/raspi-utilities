@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install samba samba-common-bin
+sudo mkdir -m 1777 /share
+cd /etc/samba/
+sudo rm smb.conf
+sudo wget https://raw.githubusercontent.com/CaolanMcKendry/raspi-utilities/master/smb.conf
+sudo /etc/init.d/samba restart
